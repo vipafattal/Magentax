@@ -22,6 +22,17 @@ fun View.alphaAnimator(time: Interval = 1000, valueTo: alpha) {
 
 }
 
+fun View.alphaAnimator(time: Interval = 1000, valueForm: alpha = this.alpha, valueTo: alpha) {
+
+    val animator = ValueAnimator.ofFloat(valueForm, valueTo)
+    animator.duration = time
+
+    animator.addUpdateListener {
+        this.alpha = animator.animatedValue as Float
+    }
+    animator.start()
+}
+
 inline fun View.alphaAnimator(time: Interval = 1000, valueForm: alpha = this.alpha, valueTo: alpha, crossinline doOnEnd: unitFun) {
 
     val animator = ValueAnimator.ofFloat(valueForm, valueTo)
