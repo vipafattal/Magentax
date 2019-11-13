@@ -2,13 +2,13 @@ package com.codebox.lib.android.widgets.snackbar
 
 import android.view.ViewGroup
 import com.codebox.lib.R
-import com.codebox.lib.android.resoures.Image
+import com.codebox.lib.android.resoures.drawableOf
 import com.codebox.lib.android.utils.screenHelpers.dp
 import com.google.android.material.snackbar.Snackbar
 
 
 fun Snackbar.material(isWithBottom: Boolean = false): Snackbar {
-    view.background = Image(R.drawable.bg_snackbar)
+    view.background = drawableOf(R.drawable.bg_snackbar)
     val params = view.layoutParams as ViewGroup.MarginLayoutParams
 
     params.setMargins(

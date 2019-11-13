@@ -1,4 +1,4 @@
-package com.codebox.lib.android.utils
+package com.codebox.lib.android.views.utils
 
 import androidx.core.text.TextUtilsCompat
 import androidx.core.view.ViewCompat

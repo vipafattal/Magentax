@@ -2,21 +2,20 @@ package com.codebox.lib.android.resoures
 
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.drawable.Drawable
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.codebox.lib.android.os.MagentaX.appContext
 
 val appResources: Resources = appContext.resources
 
 
-fun Colour(colorID: Int, context: Context = appContext): Int = ContextCompat.getColor(context, colorID)
-
-@Deprecated("Supporting different local need to provide activity context instead of application context", ReplaceWith("Stringify(stringID)"))
-fun Stringer(stringID: Int, mContext: Context = appContext) = mContext.resources.getString(stringID)
-
-fun Stringify(stringID: Int, mContext: Context) = mContext.resources.getString(stringID)
+fun colorOf(colorID: Int, context: Context = appContext): Int = ContextCompat.getColor(context, colorID)
+fun drawableOf(@DrawableRes drawableImg: Int, context: Context = appContext) = ContextCompat.getDrawable(context, drawableImg)
+fun stringer(stringID: Int, mContext: Context = appContext): String = mContext.resources.getString(stringID)
+fun stringify(stringID: Int, mContext: Context): String = mContext.resources.getString(stringID)
 
 
-fun Image(drawableImg: Int, context: Context = appContext) = ContextCompat.getDrawable(context, drawableImg)
 /**
  * @resourcesID is string resources
  *  arrayOfStrings(R.string.appName,R.string.Welcome,R.string.Login)
@@ -26,7 +25,7 @@ fun arrayOfStrings(vararg resourcesID: Int): List<String> {
     val stringsArray = ArrayList<String>()
     resourcesID.forEach {
         @Suppress("DEPRECATION")
-        stringsArray.add(Stringer(it))
+        stringsArray.add(stringer(it))
     }
     return stringsArray
 }
@@ -34,7 +33,7 @@ fun arrayOfStrings(vararg resourcesID: Int): List<String> {
 fun arrayOfStrings(vararg resourcesID: Int, context: Context): List<String> {
     val stringsArray = ArrayList<String>()
     resourcesID.forEach {
-        stringsArray.add(Stringify(it, context))
+        stringsArray.add(stringify(it, context))
     }
     return stringsArray
 }
@@ -42,7 +41,7 @@ fun arrayOfStrings(vararg resourcesID: Int, context: Context): List<String> {
 fun arrayOfColor(vararg colorsID: Int): List<Int> {
     val colorsArray = ArrayList<Int>(colorsID.size)
     colorsID.forEach {
-        colorsArray.add(Colour(it))
+        colorsArray.add(colorOf(it))
     }
     return colorsArray
 }

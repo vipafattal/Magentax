@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.codebox.lib.android.views.utils.gone
 import com.codebox.lib.android.views.utils.invisible
+import com.codebox.lib.android.views.utils.visible
 
 /**
  * control all child visibility of ViewGroup
@@ -19,6 +20,16 @@ fun ViewGroup.allChildesInvisible() {
 fun ViewGroup.allChildesGone() {
     for (child in 0 until childCount) {
         getChildAt(child).gone()
+    }
+}
+
+fun ViewGroup.allChildesVisibleExcept(v: View) {
+    for (i in 0 until this.childCount) {
+        val child = this.getChildAt(i)
+        if (child == v)
+            continue
+        else
+            child.visible()
     }
 }
 

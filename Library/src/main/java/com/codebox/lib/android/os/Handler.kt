@@ -12,7 +12,6 @@ import android.os.Handler
  *https://stackoverflow.com/questions/38827186/what-is-the-difference-between-crossinline-and-noinline-in-kotlin
  **/
 
-val appHandler by lazy { Handler() }
 
 inline fun Handler.wait(timer: Long, crossinline block: () -> Unit) {
     this.postDelayed({

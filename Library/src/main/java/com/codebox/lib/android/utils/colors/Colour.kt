@@ -1,14 +1,14 @@
 package com.codebox.lib.android.utils.colors
 
 import android.graphics.Color
-import com.codebox.lib.android.resoures.Colour
+import com.codebox.lib.android.resoures.colorOf
 
 
 /**
  * @colorID it's from colors files passed
  * returns String E.X:#000
  */
-fun hexColorToString(colorID: Int): String = '#' + Integer.toHexString(Colour(colorID))
+fun hexColorToString(colorID: Int): String = '#' + Integer.toHexString(colorOf(colorID))
 
 fun hexParse(colorID: Int): Int = Color.parseColor(hexColorToString(colorID))
 

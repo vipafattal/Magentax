@@ -1,4 +1,4 @@
-package com.codebox.lib.android.widgets
+package com.codebox.lib.android.utils
 
 import android.widget.Toast
 import com.codebox.lib.android.os.MagentaX.appContext
