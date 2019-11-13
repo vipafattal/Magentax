@@ -5,4 +5,6 @@ import androidx.core.view.ViewCompat
 import java.util.*
 
 val isRightToLeft: Boolean
-    get() = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR
+    get() = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_RTL
+
+val layoutDirection = if (isRightToLeft) -1 else 1
