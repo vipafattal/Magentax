@@ -11,6 +11,21 @@ import com.google.android.material.snackbar.Snackbar
  */
 
 
+fun View.snackbar(
+        msg: String,
+        duration: Int = Snackbar.LENGTH_LONG,
+        textColor: Int? = R.color.white
+): Snackbar {
+
+    val sn = Snackbar.make(this, msg, duration)
+    sn.show()
+
+    if (textColor != null) {
+        sn.setSnackbarTextColor(textColor)
+    }
+
+    return sn
+}
 fun AppCompatActivity.snackbar(
         msg: String,
         duration: Int = Snackbar.LENGTH_LONG,
