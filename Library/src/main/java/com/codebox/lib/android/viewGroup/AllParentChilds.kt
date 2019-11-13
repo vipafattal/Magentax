@@ -4,17 +4,26 @@ import android.view.View
 import android.view.ViewGroup
 import com.codebox.lib.standard.lambda.unitFun
 
-fun ViewGroup.allChild(): List<View> {
-    val arrayList = ArrayList<View>()
+val ViewGroup.children: List<View>
+    get() {
+        val arrayList = ArrayList<View>()
 
-    for (child in 0 until childCount) {
-        arrayList.add(this.getChildAt(child) as View)
+        for (child in 0 until childCount) {
+            arrayList.add(this.getChildAt(child) as View)
+        }
+        return arrayList
     }
-    return arrayList
+
+inline fun ViewGroup.onEachChild(block: View.() -> Unit) {
+    for (index in 0 until childCount)
+        block(this[index])
 }
 
-fun ViewGroup.doAllChildsExcepte(predict:Boolean,block:unitFun){
-    if (predict){
-        block.invoke()
+inline fun ViewGroup.onEachChildExcept(predict: Boolean, block: unitFun) {
+    onEachChild {
+        if (!predict)
+            block.invoke()
     }
+
+
 }

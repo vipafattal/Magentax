@@ -9,7 +9,7 @@ import com.codebox.lib.android.views.utils.invisible
  * control all child visibility of ViewGroup
  */
 
-fun ViewGroup.allChildesInivisble() {
+fun ViewGroup.allChildesInvisible() {
     for (child in 0 until childCount) {
         getChildAt(child).invisible()
     }
