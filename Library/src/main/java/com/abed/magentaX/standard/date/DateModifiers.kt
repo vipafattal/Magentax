@@ -3,6 +3,11 @@ package com.abed.magentaX.standard.date
 import java.util.*
 import java.util.Calendar.*
 
+fun subtractDays(days: Int, dateToSubtract: Date = Date()): Date {
+    val dateWithoutHours = dateWithoutHours(dateToSubtract)
+    dateWithoutHours.time = dateWithoutHours.time - days * 1000 * 60 * 60 * 24
+    return dateWithoutHours
+}
 
 infix fun Date.months(numbersOfMonths: Int): Date =
         getInstance().apply {

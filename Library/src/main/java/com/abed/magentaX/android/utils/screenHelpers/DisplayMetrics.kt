@@ -19,7 +19,11 @@ val screenHeight: Int = dm.heightPixels
 
 fun density() = dm.density
 
-fun dp(px: Int): Int =
+fun dp(px: Float): Float =
+        TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px,
+                appContext.resources.displayMetrics)
+
+fun dp(px: Int):Int =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px.toFloat(),
                 appContext.resources.displayMetrics).toInt()
 
