@@ -3,7 +3,6 @@ package com.abed.magentaX.standard.date
 import java.util.*
 
 operator fun Date.plus(date: Date): Date = dateOperation(this, date, +1)
-
 operator fun Date.minus(date: Date): Date = dateOperation(this, date, -1)
 
 /** @param type:
