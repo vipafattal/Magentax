@@ -1,12 +1,13 @@
 package com.abed.magentaX.android.fragments
 
-import androidx.annotation.AnimRes
-import androidx.annotation.AnimatorRes
-import androidx.annotation.IdRes
+import android.os.Build
+import androidx.annotation.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.transition.TransitionInflater
+import com.abed.magentaX.android.os.MagentaX
 
 
 val AppCompatActivity.transaction
@@ -38,5 +39,31 @@ inline fun FragmentManager.transaction(
     else
         transaction.action()
     return transaction
+}
+
+@RequiresApi(Build.VERSION_CODES.KITKAT)
+fun Fragment.transitionAnimator(@TransitionRes enterRes: Int, @TransitionRes exitRes: Int) {
+    val enterTransition = TransitionInflater.from(MagentaX.application)
+            .inflateTransition(enterRes)
+    val exitTransition = TransitionInflater.from(MagentaX.application)
+            .inflateTransition(exitRes)
+
+    sharedElementEnterTransition = enterTransition
+    sharedElementReturnTransition = exitTransition
+}
+
+@RequiresApi(Build.VERSION_CODES.KITKAT)
+fun Fragment.setEnterTrans(@TransitionRes enterRes: Int) {
+    val enterTransition = TransitionInflater.from(MagentaX.application)
+            .inflateTransition(enterRes)
+    sharedElementEnterTransition = enterTransition
+}
+
+@RequiresApi(Build.VERSION_CODES.KITKAT)
+fun Fragment.setExitTrans(@TransitionRes exitRes: Int) {
+    val exitTransition = TransitionInflater.from(MagentaX.application)
+            .inflateTransition(exitRes)
+
+    sharedElementReturnTransition = exitTransition
 }
 
