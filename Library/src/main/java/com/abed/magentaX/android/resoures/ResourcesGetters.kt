@@ -4,14 +4,14 @@ import android.content.Context
 import android.content.res.Resources
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import com.abed.magentaX.android.os.MagentaX.appContext
+import com.abed.magentaX.android.os.MagentaX.application
 
-val appResources: Resources = appContext.resources
+val appResources: Resources = application.resources
 
 
-fun colorOf(colorID: Int, context: Context = appContext): Int = ContextCompat.getColor(context, colorID)
-fun drawableOf(@DrawableRes drawableImg: Int, context: Context = appContext) = ContextCompat.getDrawable(context, drawableImg)
-fun stringer(stringID: Int, mContext: Context = appContext): String = mContext.resources.getString(stringID)
+fun colorOf(colorID: Int, context: Context = application): Int = ContextCompat.getColor(context, colorID)
+fun drawableOf(@DrawableRes drawableImg: Int, context: Context = application) = ContextCompat.getDrawable(context, drawableImg)
+fun stringer(stringID: Int, mContext: Context = application): String = mContext.resources.getString(stringID)
 fun stringify(stringID: Int, mContext: Context): String = mContext.resources.getString(stringID)
 
 

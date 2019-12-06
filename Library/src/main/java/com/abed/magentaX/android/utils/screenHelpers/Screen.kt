@@ -1,13 +1,13 @@
 package com.abed.magentaX.android.utils.screenHelpers
 
 import android.content.res.Configuration
-import com.abed.magentaX.android.os.MagentaX.appContext
+import com.abed.magentaX.android.os.MagentaX.application
 import com.abed.magentaX.android.resoures.appResources
 import org.jetbrains.anko.ScreenSize
 import org.jetbrains.anko.ScreenSize.*
 
 fun isScreenTablet(): Boolean =
-        appContext.resources.configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK >= Configuration.SCREENLAYOUT_SIZE_LARGE
+        application.resources.configuration.screenLayout and Configuration.SCREENLAYOUT_SIZE_MASK >= Configuration.SCREENLAYOUT_SIZE_LARGE
 
 
 private fun getScreenSize(): ScreenSize {

@@ -2,7 +2,7 @@ package com.abed.magentaX.android.utils.screenHelpers
 
 import android.util.DisplayMetrics
 import android.util.TypedValue
-import com.abed.magentaX.android.os.MagentaX.appContext
+import com.abed.magentaX.android.os.MagentaX.application
 import com.abed.magentaX.android.resoures.appResources
 
 
@@ -11,7 +11,7 @@ import com.abed.magentaX.android.resoures.appResources
  */
 // Set the screen width and height
 
-private var dm: DisplayMetrics = appContext.resources.displayMetrics
+private var dm: DisplayMetrics = application.resources.displayMetrics
 
 val screenWidth: Int = dm.widthPixels
 val screenHeight: Int = dm.heightPixels
@@ -21,11 +21,11 @@ fun density() = dm.density
 
 fun dp(px: Float): Float =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px,
-                appContext.resources.displayMetrics)
+                application.resources.displayMetrics)
 
 fun dp(px: Int):Int =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px.toFloat(),
-                appContext.resources.displayMetrics).toInt()
+                application.resources.displayMetrics).toInt()
 
 fun pixelsToSp(px: Float): Float {
     val scaledDensity = appResources.displayMetrics.scaledDensity

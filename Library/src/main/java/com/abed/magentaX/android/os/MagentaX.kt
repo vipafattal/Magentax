@@ -6,11 +6,11 @@ import com.abed.magentaX.standard.delegation.DelegatesExt
 
 
 object MagentaX {
-    internal var appContext by DelegatesExt.notNullSingleValue<Context>()
+    internal var application by DelegatesExt.notNullSingleValue<Context>()
         private set
 
     fun init(context: Context): MagentaX {
-        appContext = context
+        application = context
         return this
     }
 

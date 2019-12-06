@@ -2,7 +2,7 @@ package com.abed.magentaX.android.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.abed.magentaX.android.os.MagentaX.appContext
+import com.abed.magentaX.android.os.MagentaX.application
 import com.abed.magentaX.extrenalLib.edit
 
 
@@ -22,7 +22,7 @@ class AppPreferences {
     }
 
     private var fileName = defaultPrefsFileName
-    private val mPref: SharedPreferences by lazy { appContext.getSharedPreferences(fileName, Context.MODE_PRIVATE) }
+    private val mPref: SharedPreferences by lazy { application.getSharedPreferences(fileName, Context.MODE_PRIVATE) }
 
     fun getDouble(key: String, defValue: Double = 0.0): Double {
         return mPref.getString(key, defValue.toString())!!.toDouble()
