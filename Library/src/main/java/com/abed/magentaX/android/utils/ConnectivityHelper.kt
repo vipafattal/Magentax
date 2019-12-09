@@ -6,7 +6,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.annotation.IntRange
 import androidx.annotation.RequiresPermission
-import com.abed.magentaX.android.os.MagentaX
+import com.abed.magentaX.android.MagentaX
 
 
 object ConnectivityHelper {

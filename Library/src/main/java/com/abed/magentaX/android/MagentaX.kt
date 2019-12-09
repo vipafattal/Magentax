@@ -1,4 +1,4 @@
-package com.abed.magentaX.android.os
+package com.abed.magentaX.android
 
 import android.content.Context
 import com.abed.magentaX.android.utils.AppPreferences

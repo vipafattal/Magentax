@@ -1,5 +1,9 @@
 package com.abed.magentaX.android.fragments
 
-fun androidx.fragment.app.FragmentActivity.removeFragment(frag: androidx.fragment.app.Fragment) {
-    supportFragmentManager.beginTransaction().remove(frag).commit()
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+
+fun FragmentManager.removeFragment(frag: Fragment) {
+    beginTransaction().remove(frag).commit()
 }

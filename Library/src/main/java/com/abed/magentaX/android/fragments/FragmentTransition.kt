@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.transition.TransitionInflater
-import com.abed.magentaX.android.os.MagentaX
+import com.abed.magentaX.android.MagentaX
 
 
 val AppCompatActivity.transaction

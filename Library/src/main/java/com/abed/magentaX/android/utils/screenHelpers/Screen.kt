@@ -1,7 +1,7 @@
 package com.abed.magentaX.android.utils.screenHelpers
 
 import android.content.res.Configuration
-import com.abed.magentaX.android.os.MagentaX.application
+import com.abed.magentaX.android.MagentaX.application
 import com.abed.magentaX.android.resoures.appResources
 import org.jetbrains.anko.ScreenSize
 import org.jetbrains.anko.ScreenSize.*

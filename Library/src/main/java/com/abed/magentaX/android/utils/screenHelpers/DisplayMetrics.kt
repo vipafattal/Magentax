@@ -2,7 +2,7 @@ package com.abed.magentaX.android.utils.screenHelpers
 
 import android.util.DisplayMetrics
 import android.util.TypedValue
-import com.abed.magentaX.android.os.MagentaX.application
+import com.abed.magentaX.android.MagentaX.application
 import com.abed.magentaX.android.resoures.appResources
 
 

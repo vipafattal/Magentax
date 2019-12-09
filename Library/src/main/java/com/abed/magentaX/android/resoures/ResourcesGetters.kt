@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.res.Resources
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import com.abed.magentaX.android.os.MagentaX.application
+import com.abed.magentaX.android.MagentaX.application
 
 val appResources: Resources = application.resources
 

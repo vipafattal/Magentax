@@ -23,7 +23,7 @@ fun stringDateWithMin(date: Date = Date()): String {
 
 /**
  * kk means hours in 24 system
- * this fun return time in the form [hours,min]
+ * this function returns time in the form [hours,min]
  * so to get hours
  * define a variable getTimeArray(date)[0] "hours"  getTimeArray(date)[1] "min"
  * for example:

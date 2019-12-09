@@ -2,7 +2,7 @@ package com.abed.magentaX.android.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.abed.magentaX.android.os.MagentaX.application
+import com.abed.magentaX.android.MagentaX.application
 import com.abed.magentaX.extrenalLib.edit
 
 
