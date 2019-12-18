@@ -10,15 +10,6 @@ import androidx.transition.TransitionInflater
 import com.abed.magentaX.android.MagentaX
 
 
-val AppCompatActivity.transaction
-    get() = supportFragmentManager.beginTransaction()
-
-
-fun AppCompatActivity.replaceFragment(fragment: Fragment, @IdRes viewID: Int, tag: String? = null) {
-    supportFragmentManager.transaction {
-        replace(viewID, fragment, tag)
-    }
-}
 
 fun FragmentTransaction.animate(@AnimatorRes @AnimRes enter: Int = android.R.anim.fade_in,
                                 @AnimatorRes @AnimRes exit: Int = android.R.anim.fade_out) =
