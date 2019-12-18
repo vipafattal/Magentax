@@ -2,9 +2,9 @@ package com.abed.magentaX.android.viewGroup
 
 import android.view.View
 import android.view.ViewGroup
-import com.abed.magentaX.android.views.utils.gone
-import com.abed.magentaX.android.views.utils.invisible
-import com.abed.magentaX.android.views.utils.visible
+import com.abed.magentaX.android.views.gone
+import com.abed.magentaX.android.views.invisible
+import com.abed.magentaX.android.views.visible
 
 /**
  * control all child visibility of ViewGroup

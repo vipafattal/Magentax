@@ -14,7 +14,7 @@ object MagentaX {
         return this
     }
 
-    fun setDefualtSharedPrefernceName(name: String): MagentaX {
+    fun setDefaultSharedPreferenceName(name: String): MagentaX {
         AppPreferences.defaultPrefsFileName = name
         return this
     }

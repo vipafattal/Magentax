@@ -1,6 +1,6 @@
 package com.abed.magentaX.android.widgets.snackbar
 
-import com.abed.magentaX.libHelpers.getThemeAccentColor
+import com.abed.magentaX.android.context.colorAccent
 import com.abed.magentaX.standard.lambda.unitFun
 import com.google.android.material.snackbar.Snackbar
 
@@ -10,7 +10,8 @@ import com.google.android.material.snackbar.Snackbar
 fun Snackbar.showAction(actionText: String = "Dismiss",
                         actionTextColor: Int? = null
 ) {
-    setActionTextColor(actionTextColor ?: getThemeAccentColor(context))
+
+    setActionTextColor(actionTextColor ?: context.colorAccent)
     setAction(actionText) {
         dismiss()
     }
@@ -22,7 +23,7 @@ fun Snackbar.showAction(actionText: String = "Dismiss",
 inline fun Snackbar.showAction(actionText: String = "Dismiss",
                                actionTextColor: Int? = null,
                                crossinline onActionClick: unitFun) {
-    setActionTextColor(actionTextColor ?: getThemeAccentColor(context))
+    setActionTextColor(actionTextColor ?: context.colorAccent)
     setAction(actionText) {
         onActionClick.invoke()
     }
