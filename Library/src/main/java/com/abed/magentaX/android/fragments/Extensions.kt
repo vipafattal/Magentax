@@ -1,6 +1,5 @@
 package com.abed.magentaX.android.fragments
 
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 
 
