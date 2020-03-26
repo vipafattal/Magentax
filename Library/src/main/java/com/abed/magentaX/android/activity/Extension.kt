@@ -1,4 +1,4 @@
-package com.abed.magentaX.android.actvity
+package com.abed.magentaX.android.activity
 
 import android.app.Activity
 import android.view.inputmethod.InputMethodManager

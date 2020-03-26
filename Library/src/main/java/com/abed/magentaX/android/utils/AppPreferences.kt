@@ -104,9 +104,9 @@ class AppPreferences {
         }
     }
 
-    fun remove(key: Int) {
+    fun remove(key: String) {
         mPref.edit {
-            remove(key.toString())
+            this.remove(key)
         }
     }
 
