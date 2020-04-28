@@ -14,9 +14,8 @@ object ConnectivityHelper {
     @RequiresPermission(android.Manifest.permission.ACCESS_NETWORK_STATE)
     fun isConnectedToNetwork(): Boolean = getConnectionType() != 0
 
-
     //https://stackoverflow.com/a/53243938/6470661
-    @IntRange(from = 0, to = 2)
+    @IntRange(from = 0, to = 3)
     @RequiresPermission(android.Manifest.permission.ACCESS_NETWORK_STATE)
     fun getConnectionType(): Int {
         var result = 0
@@ -24,8 +23,9 @@ object ConnectivityHelper {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 getNetworkCapabilities(activeNetwork)?.run {
                     result = when {
-                        hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> 2
-                        hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> 1
+                        hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> 3
+                        hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> 2
+                        hasTransport(NetworkCapabilities.TRANSPORT_VPN) -> 1
                         else -> 0
                     }
                 }
@@ -33,8 +33,9 @@ object ConnectivityHelper {
             } else {
                 @Suppress("DEPRECATION")
                 result = when (activeNetworkInfo?.type) {
-                    ConnectivityManager.TYPE_WIFI -> 2
-                    ConnectivityManager.TYPE_MOBILE -> 1
+                    ConnectivityManager.TYPE_WIFI -> 3
+                    ConnectivityManager.TYPE_MOBILE -> 2
+                    ConnectivityManager.TYPE_VPN -> 1
                     else -> 0
                 }
             }
