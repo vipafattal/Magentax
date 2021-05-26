@@ -19,14 +19,15 @@ val screenHeight: Int = dm.heightPixels
 
 fun density() = dm.density
 
+ @JvmStatic
 fun dp(px: Float): Float =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px,
                 application.resources.displayMetrics)
-
+@JvmStatic
 fun dp(px: Int):Int =
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px.toFloat(),
                 application.resources.displayMetrics).toInt()
-
+@JvmStatic
 fun pixelsToSp(px: Float): Float {
     val scaledDensity = appResources.displayMetrics.scaledDensity
     return px / scaledDensity
