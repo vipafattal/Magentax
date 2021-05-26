@@ -4,7 +4,7 @@ import android.graphics.Typeface
 import android.util.TypedValue
 import android.widget.TextView
 import com.abed.magentaX.android.MagentaX
-import com.abed.magentaX.android.utils.screenHelpers.pixelsToSp
+import com.abed.magentaX.android.utils.screenHelpers.DisplayMetrics.Companion.pixelsToSp
 
 var TextView.sizeInSp: Float
     get() = pixelsToSp(textSize)

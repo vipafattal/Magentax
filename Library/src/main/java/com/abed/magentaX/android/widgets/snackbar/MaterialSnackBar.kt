@@ -1,12 +1,15 @@
 package com.abed.magentaX.android.widgets.snackbar
 
+import android.os.Build
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import com.abed.magentaX.R
 import com.abed.magentaX.android.resoures.drawableOf
-import com.abed.magentaX.android.utils.screenHelpers.dp
+import com.abed.magentaX.android.utils.screenHelpers.DisplayMetrics.Companion.dp
 import com.google.android.material.snackbar.Snackbar
 
 
+@RequiresApi(Build.VERSION_CODES.JELLY_BEAN)
 fun Snackbar.material(isWithBottom: Boolean = false): Snackbar {
     view.background = drawableOf(R.drawable.bg_snackbar)
     val params = view.layoutParams as ViewGroup.MarginLayoutParams
